@@ -5,7 +5,6 @@ const scene_1 = require("./scene");
 const test_1 = require("../scene/test");
 const titleScreen_1 = require("../scene/titleScreen");
 function createScene(type) {
-    console.log("type = " + type);
     switch (type) {
         case scene_1.IdScene.titleScreen:
             return new titleScreen_1.STitleScreen({ id: type });

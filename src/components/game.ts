@@ -1,4 +1,4 @@
-import raylib from "../../lib/index.js";
+import raylib from "raylib";
 import { Scene, IdScene } from "./scene.js";
 import { createScene } from "./createObject.js";
 import config from "../../assets/config/game.json";
@@ -24,7 +24,6 @@ export class Game {
   constructor() {
     // Init the raylib setup
     //for this init i will to a JSON to Typescript obj directly but not now, to optimise somethings you need sommething
-    console.log(config);
     this.info = {
       running: true,
       currentScene: IdScene[config.scene.sceneAtStart],
@@ -37,17 +36,14 @@ export class Game {
   }
   load(): void {
     //later do a assetManager
-    console.log("game is loading");
     raylib.InitWindow(
       this.info.screenWidth,
       this.info.screenHeight,
       this.info.title
     );
     raylib.SetTargetFPS(this.info.fpsLimit);
-    console.log("Game is constructed");
     let sceneToLoad = config.scene.sceneToLoadAtStart;
     sceneToLoad.forEach((elem) => {
-      console.log(elem + " ||||  " + IdScene[elem]);
       this.allScene.set(IdScene[elem], createScene(IdScene[elem]));
       this.allScene.get(IdScene[elem]).load({});
     });
@@ -61,7 +57,12 @@ export class Game {
     //   }
   }
   update(): void {
-    this.allScene.get(this.info.currentScene).update(this.info, {});
+    let bufferIdScene = this.allScene
+      .get(this.info.currentScene)
+      .update(this.info, {});
+    if (bufferIdScene !== this.info.currentScene) {
+      this.info.currentScene = bufferIdScene;
+    }
   }
   draw(): void {
     raylib.BeginDrawing();

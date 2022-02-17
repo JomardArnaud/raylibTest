@@ -6,7 +6,7 @@
     "fpsLimit": 60
   },
   "scene": {
-    "sceneAtStart": "test",
+    "sceneAtStart": "titleScreen",
     "sceneToLoadAtStart": ["titleScreen", "test"]
   }
 }

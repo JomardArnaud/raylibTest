@@ -1,7 +1,8 @@
-import raylib from "../../lib/index";
+import r from "raylib";
 import { InfoGame } from "../components/game.js";
 import { Scene, InfoScene, IdScene } from "../components/scene.js";
 import config from "../../assets/config/titleScreen.json";
+import * as enums from "../../lib/src/types/enums";
 
 export class STitleScreen extends Scene {
   constructor(info: InfoScene) {
@@ -9,18 +10,16 @@ export class STitleScreen extends Scene {
   }
   _titleSprite: any;
   load(props: any): void {
-    console.log("title: i'm loading asset");
-    this._titleSprite = raylib.LoadTexture(config.assets.textures.screenImage);
+    this._titleSprite = r.LoadTexture(config.assets.textures.screenImage);
   }
   update(infoGame: InfoGame, props: object): IdScene {
-    console.log("title: i'm updating");
-    if (!raylib.IsKeyUp(raylib.KeyboardKey.KEY_R)) {
+    if (!r.IsKeyUp(enums.KeyboardKey.KEY_R)) {
       console.log("UwU");
       return IdScene.test;
     }
     return this._info.id;
   }
   draw(): void {
-    raylib.DrawTexture(this._titleSprite, 0, 0, raylib.WHITE);
+    r.DrawTexture(this._titleSprite, 0, 0, r.WHITE);
   }
 }

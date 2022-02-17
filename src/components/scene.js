@@ -12,17 +12,12 @@ class Scene {
     constructor(info) {
         this._info = info;
     }
-    load(props) {
-        console.log("Scene: i'm loading asset");
-    }
+    load(props) { }
     // can send a props = {}, but it is better than put props optional (https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
     update(infoGame, props) {
-        console.log("Scene: i'm updating");
         return this._info.id;
     }
-    draw() {
-        console.log("Scene: i'm drawing");
-    }
+    draw() { }
 }
 exports.Scene = Scene;
 //# sourceMappingURL=scene.js.map

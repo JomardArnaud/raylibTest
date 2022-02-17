@@ -3,7 +3,6 @@ import { STest } from "../scene/test";
 import { STitleScreen } from "../scene/titleScreen";
 
 export function createScene(type: IdScene): Scene {
-  console.log("type = " + type);
   switch (type) {
     case IdScene.titleScreen:
       return new STitleScreen({ id: type });
