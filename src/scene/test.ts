@@ -39,9 +39,10 @@ export class STest extends Scene {
     r.DrawCircle(259, 152, 34, r.LIGHTGRAY);
     r.DrawCircle(
       259 +
-        r.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_LEFT_X) * 20,
-      152 +
         r.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_LEFT_Y) * 20,
+      152 +
+        r.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_RIGHT_X) *
+          20,
       25,
       r.BLACK
     );

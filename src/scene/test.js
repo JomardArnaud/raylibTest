@@ -52,8 +52,9 @@ class STest extends scene_js_1.Scene {
         raylib_1.default.DrawCircle(259, 152, 39, raylib_1.default.BLACK);
         raylib_1.default.DrawCircle(259, 152, 34, raylib_1.default.LIGHTGRAY);
         raylib_1.default.DrawCircle(259 +
-            raylib_1.default.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_LEFT_X) * 20, 152 +
-            raylib_1.default.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_LEFT_Y) * 20, 25, raylib_1.default.BLACK);
+            raylib_1.default.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_LEFT_Y) * 20, 152 +
+            raylib_1.default.GetGamepadAxisMovement(0, enums.GamepadAxis.GAMEPAD_AXIS_RIGHT_X) *
+                20, 25, raylib_1.default.BLACK);
     }
 }
 exports.STest = STest;
