@@ -1,0 +1,15 @@
+{
+  "name": "raylibtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc --build --force & node ./src/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

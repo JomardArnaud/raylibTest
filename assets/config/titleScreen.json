@@ -1,0 +1,7 @@
+{
+  "assets": {
+    "textures": {
+      "screenImage": "./assets/textures/titleScreen.png"
+    }
+  }
+}

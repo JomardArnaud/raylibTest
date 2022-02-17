@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "target": "ES6",
+    "watch": true,
+    "baseUrl": "./"
+  },
+  "lib": ["es2015", "ES5", "dom"],
+  "include": ["src"],
+  "exclude": ["node_modules", "assets", "lib"]
+}

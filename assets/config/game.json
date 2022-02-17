@@ -1,0 +1,12 @@
+{
+  "game": {
+    "screenWidth": 800,
+    "screenHeight": 450,
+    "title": "Test Raylib",
+    "fpsLimit": 60
+  },
+  "scene": {
+    "sceneAtStart": "test",
+    "sceneToLoadAtStart": ["titleScreen", "test"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "assets": {
+    "textures": {
+      "player": "./assets/textures/player.png"
+    }
+  },
+  "info": {
+    "player": {
+      "speed": 7
+    }
+  }
+}

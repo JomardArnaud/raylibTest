@@ -1,0 +1,34 @@
+import { Color } from "./types/colors";
+import { Vector2, Rectangle } from "./types/maths";
+import { Font, Image, CharInfo } from "./types/texture";
+export default interface Text {
+    GetFontDefault: () => Font;
+    LoadFont: (fileName: string) => Font;
+    LoadFontEx: (fileName: string, fontSize: number, fontChars: number, charsCount: number) => Font;
+    LoadFontFromImage: (image: Image, key: Color, firstChar: number) => Font;
+    LoadFontData: (fileName: string, fontSize: number, fontChars: number, charsCount: number, type: number) => CharInfo;
+    GenImageFontAtlas: (chars: CharInfo, charsCount: number, fontSize: number, padding: number, packMethod: number) => Image;
+    UnloadFont: (font: Font) => void;
+    DrawFPS: (posX: number, posY: number) => void;
+    DrawText: (text: string, posX: number, posY: number, fontSize: number, color: Color) => void;
+    DrawTextEx: (font: Font, text: string, position: Vector2, fontSize: number, spacing: number, tint: Color) => void;
+    DrawTextRec: (font: Font, text: string, rec: Rectangle, fontSize: number, spacing: number, wordWrap: boolean, tint: Color) => void;
+    DrawTextRecEx: (font: Font, text: string, rec: Rectangle, fontSize: number, spacing: number, wordWrap: boolean, tint: Color, selectStart: number, selectLength: number, selectText: Color, selectBack: Color) => void;
+    MeasureText: (text: string, fontSize: number) => number;
+    MeasureTextEx: (font: Font, text: string, fontSize: number, spacing: number) => Vector2;
+    GetGlyphIndex: (font: Font, character: number) => number;
+    TextIsEqual: (text1: string, text2: string) => boolean;
+    TextLength: (text: string) => number;
+    TextFormat: (text: string, ...args: any) => string;
+    TextSubtext: (text: string, position: number, length: number) => string;
+    TextReplace: (text: string, replace: string, by: string) => string;
+    TextInsert: (text: string, insert: string, position: number) => string;
+    TextJoin: (textList: string, count: number, delimiter: string) => string;
+    TextSplit: (text: string, delimiter: string, count: number) => string;
+    TextAppend: (text: string, append: string, position: number) => void;
+    TextFindIndex: (text: string, find: string) => number;
+    TextToUpper: (text: string) => string;
+    TextToLower: (text: string) => string;
+    TextToPascal: (text: string) => string;
+    TextToInteger: (text: string) => number;
+}
